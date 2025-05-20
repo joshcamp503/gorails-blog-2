@@ -28,7 +28,7 @@ development:
   # To create additional roles in PostgreSQL see `$ createuser --help`.
   # When left blank, PostgreSQL will use the default role. This is
   # the same name as the operating system user running Rails.
-  username: roybot
+  # username: roybot
 
   # The password associated with the PostgreSQL role (username).
   #password:
@@ -81,18 +81,18 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: tut_blog_production
-    username: tut_blog
-    password: <%= ENV["TUT_BLOG_DATABASE_PASSWORD"] %>
+    database: gorails_blog_2_production
+    username: gorails_blog_2
+    password: <%= ENV["GORAILS_BLOG_2_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
-    database: tut_blog_production_cache
+    database: gorails_blog_2_production_cache
     migrations_paths: db/cache_migrate
   queue:
     <<: *primary_production
-    database: tut_blog_production_queue
+    database: gorails_blog_2_production_queue
     migrations_paths: db/queue_migrate
   cable:
     <<: *primary_production
-    database: tut_blog_production_cable
+    database: gorails_blog_2_production_cable
     migrations_paths: db/cable_migrate
