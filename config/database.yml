@@ -82,7 +82,7 @@ production:
   primary: &primary_production
     <<: *default
     database: gorails_blog_2_production
-    username: gorails_blog_2
+    username: gorails_blog_2_user
     password: <%= ENV["GORAILS_BLOG_2_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
