@@ -1,0 +1,4 @@
+<h1><%= @blog_post.title %></h1>
+<%= @blog_post.body %>
+<%= button_to "Edit", edit_blog_post_path, method: :get if user_signed_in? %>
+<%= button_to "Home", root_path, method: :get %>
