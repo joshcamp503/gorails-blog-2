@@ -2,7 +2,7 @@ class BlogPost < ApplicationRecord
   validates :title, presence: true
   validates :body, presence: true
 
-  scope :sorted, -> { order(published_at: :desc, updated_at: :desc) }
+  scope :sorted, -> { order("published_at desc NULLS LAST").order(updated_at: :desc) }
   scope :draft, -> { where(published_at: nil) }
   # ^^^^^^^^^^ -> this allows you to call BlogPost.draft
   scope :published, -> { where("published_at <= ?", Time.current) }
