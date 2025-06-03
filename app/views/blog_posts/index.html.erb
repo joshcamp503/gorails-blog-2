@@ -12,8 +12,8 @@
   </div>
 <% end %>
 
-<div class="mt-16">
-  <% if @pagy.count > @pagy.limit %>
+<% if @pagy.count > @pagy.limit %>
+  <div class="mt-16">
     <%== pagy_nav(@pagy) %>
-  <% end %>
-</div>
+  </div>
+<% end %>
